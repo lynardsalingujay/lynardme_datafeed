@@ -16,7 +16,7 @@ setup(
     classifiers=["Development Status :: 3 - Alpha"],
     install_requires = [
         "pandas==0.25.1",
-        "django==2.2.6",
+        "django==2.2.13",
         "lxml==4.4.1",
         "requests==2.22.0",
         "xlrd==1.2.0",
