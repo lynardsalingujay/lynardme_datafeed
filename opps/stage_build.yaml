@@ -12,7 +12,7 @@ steps:
 
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: [ 'beta', 'run', 'deploy', 'lynardme_datafeed', '--image', 'gcr.io/$PROJECT_ID/lynardme_datafeed', '--region', 'asia-northeast1','--platform', 'managed', '--quiet' ]
+  args: [ 'beta', 'run', 'deploy', 'lynardme-datafeed', '--image', 'gcr.io/$PROJECT_ID/lynardme_datafeed', '--region', 'asia-northeast1','--platform', 'managed', '--quiet' ]
   dir: '/workspace'
 
 images:
