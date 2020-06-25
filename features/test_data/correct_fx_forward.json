@@ -1,0 +1,6 @@
+{"model": "Transaction",
+ "meta": "",
+ "data":
+	 [{"unique": "K20190805/95092/GBP",
+	   "transaction_time": "2019-01-01"}]
+ }

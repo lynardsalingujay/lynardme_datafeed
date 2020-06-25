@@ -1,0 +1,130 @@
+{% extends 'authenticated.html' %}
+
+{% block page_content %}
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Fund classifier</h1>
+    </div>
+
+    <form class="user" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="card shadow mb-4 col-xl-7 border-top-primary">
+                <div class="card-header pt-3 pb-0">
+                    <div class="row">
+                        <h6 class="mr-2 col m-0 font-weight-bold text-primary">Model Inputs</h6>
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link {% if geo == None %} active {% endif %}" href="/fund_classifier">None</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if geo == 'US' %} active {% endif %}" href="/fund_classifier/us">US</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if geo == 'JP' %} active {% endif %}" href="/fund_classifier/jp">JP</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col mr-2">
+                        <div class="row no-gutters align-items-center">
+                            <div class="form-group mx-3">
+                                {{ form.fund }}
+                            </div>
+                            <div class="form-group mx-3">
+                                {{ form.index }}
+                            </div>
+                            <div class="form-group mx-3">
+                                {{ form.fx }}
+                            </div>
+                        </div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="form-group mx-3">
+                                <label class="control-label pr-5">{{ form.has_currency_hedge.label }}</label>
+                                {{ form.has_currency_hedge }}
+                            </div>
+                            <div class="form-group mx-3">
+                                {{ form.index_offset }}
+                            </div>
+                            <div class="form-group  mx-3">
+                                {{ form.fx_time }}
+                            </div>
+                        </div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="form-group mx-3">
+                                <div class="date" data-provide="datepicker" data-date-format="yyyy-mm-dd"
+                                     data-date-autoclose="true">
+                                    {{ form.start_date }}
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mx-3">
+                                <div class="date" data-provide="datepicker" data-date-format="yyyy-mm-dd"
+                                     data-date-autoclose="true">
+                                    {{ form.end_date }}
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mx-3">
+                                <label class="control-label pr-5">{{ form.include_holidays.label }}</label>
+                                {{ form.include_holidays }}
+                            </div>
+                            <div class="form-group mx-3">
+                                <button type="submit" name="calculate" value="calculate"
+                                        class="btn btn-primary btn-user btn-block mx-3">
+                                    Calculate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow mb-4 mx-2 col-xl-3 border-top-primary">
+                <div class="card-header pt-3 pb-4">
+                    <div class="row">
+                        <h6 class="mr-2 m-0 font-weight-bold text-primary">Model Outputs</h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col mr-2">
+                        <div class="form-group mx-3">
+                            {{ form.rsq }}
+                        </div>
+                        <div class="form-group mx-3">
+                            {{ form.beta }}
+                        </div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="form-group mx-3">
+                                <label class="control-label">{{ form.approved.label }}</label>
+                                {{ form.approved }}
+                            </div>
+                            <div class="form-group mx-3">
+                                <button type="submit" name="save" value="save"
+                                        class="btn btn-primary btn-user btn-block mx-4">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card shadow mb-4 mx-2 col-xl-10 border-top-primary">
+                <div class="card-header pt-3 pb-4">
+                    <div class="row">
+                        <h6 class="mr-2 m-0 font-weight-bold text-primary">Residuals Time Plot</h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    {{ div | safe }}
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

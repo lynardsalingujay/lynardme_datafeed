@@ -1,0 +1,18 @@
+"General BBL9177.001, 2019-08-23"
+Account,Date,Account Value,Available,Used for Margin,Margin Utilization
+BBL9177.001,2019-10-28,52191.16,43202.38,8988.79,17.00%
+
+"Cash Balance BBL9177.001, 2019-08-23"
+Instrument,ISO,Value,Value in GBP
+Pound sterling,GBP,49970.53,49970.53
+US Dollar,USD,-154.97,-126.6
+
+"Forex (BBL9177.001, 2019-08-23)"
+Instrument,QTY,Avg Price,Price,CCY,P&L,P&L in GBP,Value,Value in GBP,Daily P&L,Daily P&L in GBP
+GBP/USD.E.FX,140000,1.21598,1.228745,USD,1787.1,1459.88,172024.3,140525.98,530.6,433.45
+
+"Futures (BBL9177.001, 2019-08-23)"
+Instrument,QTY,Avg Price,Price,CCY,P&L,P&L in GBP,Value,Value in GBP,Daily P&L,Daily P&L in GBP
+ES.CME.U2019,-1,2869.75,2851.625,USD,906.25,740.31,-142581.25,-116474.07,3425.0,2797.87
+MES.CME.U2019,-2,2869.5,2851.5,USD,180.0,147.04,-28515.0,-23293.8,688.75,562.64
+

@@ -1,0 +1,5 @@
+curl -X POST -H "Content-Type: application/json" -d '{"username": "alex", "password": "password"}' http://localhost:8000/api/token/obtain/
+
+curl -verbose -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTgyMzc0Mjk0LCJqdGkiOiJmOGE4MTVlMDQyYjI0NmRhYWZlOGZlMjljMTlkOWU2ZSIsInVzZXJfaWQiOjF9.QOKOrCVHQl0dTN5SpIssFDtU_ZTwb84dBTGfh3YnNLU" http://127.0.0.1:8000/api/mock/json/contract_info
+
+curl -verbose -X POST -F "1=1234.5" -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTgyMzc0Mjk0LCJqdGkiOiJmOGE4MTVlMDQyYjI0NmRhYWZlOGZlMjljMTlkOWU2ZSIsInVzZXJfaWQiOjF9.QOKOrCVHQl0dTN5SpIssFDtU_ZTwb84dBTGfh3YnNLU" http://127.0.0.1:8000/api/live/json/reyl_transactions_with_no_price

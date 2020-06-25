@@ -1,0 +1,15 @@
+{"model": "Transaction",
+	"meta": "future_confirm",
+ "data":
+	 [{"price": 1587.20,
+	   "gross_transaction_value": 79360000,
+	   "net_transaction_value": 79387245,
+	   "quantity": 5,
+	   "symbol": "TPH19 Index",
+	   "transaction_type": "buy",
+	   "asset_type": "index_future",
+	   "value_date": "2019-03-11",
+	   "custodian": "Reyl",
+	   "owner": "Mid Pacific AM",
+	   "group": "MFT"}]
+ }

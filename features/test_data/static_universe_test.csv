@@ -1,0 +1,13 @@
+BB Ticker,Asset class,Contract mul,Expiry date,Currency,Underlying Index,ISIN,Name,Symbol,Fund size,Fund size currency,Front load,Back load,Minimum investment,Performance fee,Geo
+TPM0 Index,index_future,10000,11/06/2020,JPY,TPX Index,,TOPIX INDX FUTR   Jun20,TPM20 Index,,,,,,,
+ESM0 Index,index_future,50,19/06/2020,USD,SPX Index,,S&P500 EMINI FUT  Jun20,ESM20 Index,,,,,,,
+SPX Index,equity_index,,,USD,,US78378X1072,S&P 500 INDEX,SPX Index,,,,,,,
+TPX Index,equity_index,,,JPY,,JP9010100007,TOPIX INDEX (TOKYO),TPX Index,,,,,,,
+GBPUSD Curncy,fx_spot,,,USD,,,GBP-USD X-RATE,GBPUSD Curncy,,,,,,,
+GBPEUR Curncy,fx_spot,,,EUR,,,GBP-EUR X-RATE,GBPEUR Curncy,,,,,,,
+GBPJPY Curncy,fx_spot,,,JPY,,,GBP-JPY X-RATE,GBPJPY Curncy,,,,,,,
+JPJAPAA LN Equity,fund,,,GBp,,GB0030879471,JPM JAPAN-A-ACC,JPJAPAA LN Equity,1397259000,GBP,0,0,1000,0,JP
+LEGJPIA LN Equity,fund,,,GBp,,GB0002050879,LEGAL & GENERAL JAPAN ID-RA,LEGJPIA LN Equity,1213612000,GBP,0,0,100,0,JP
+LMJEQAA LN Equity,fund,,,GBp,,GB0033507467,LEGG MASON JAPAN EQTY-A-ACC,LMJEQAA LN Equity,994824500,GBP,0.04,0,3000,0,JP
+JPMUEAA LN Equity,fund,,,GBp,,GB00B3FJQ045,JPM US EQUITY INCOME-A-ACC,JPMUEAA LN Equity,3268106000,GBP,0,0,1000,0,US
+HSBAMCA LN Equity,fund,,,GBp,,GB00B80QG615,HSBC AMERICAN INDEX-C ACC,HSBAMCA LN Equity,5678098000,GBP,0,0,1000000,0,US

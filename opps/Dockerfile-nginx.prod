@@ -1,0 +1,57 @@
+# setup image and dir structure
+FROM nikolaik/python-nodejs:python3.7-nodejs12
+COPY . /project
+WORKDIR /project
+
+RUN ls
+
+ENV DJANGO_SETTINGS_MODULE=settings
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# set up NGINX server
+RUN apt update
+RUN apt install nginx -y
+RUN apt-get install systemd -y
+RUN apt-get install supervisor -y
+RUN mkdir -p /var/www/localhost/html
+RUN chown -R $USER:$USER /var/www/localhost/html
+RUN chmod -R 755 /var/www/localhost
+RUN cp opps/nginx.conf /etc/nginx/sites-available/default
+RUN mkdir -p /var/www/react/html
+
+# always run these in a DEV or TEST environment
+WORKDIR server
+RUN ls
+RUN pip install -r requirements.txt
+
+WORKDIR ../client
+RUN yarn install
+RUN yarn build
+RUN yarn export
+RUN cp -r out/* /var/www/react/html
+
+
+# run these in actual environment (but be careful!)
+WORKDIR ..
+ARG ENVIRONMENT
+ENV ENVIRONMENT=${ENVIRONMENT}
+RUN ./opps/run_behave.sh
+RUN ./opps/migrate.sh
+
+EXPOSE 8080
+
+STOPSIGNAL SIGTERM
+
+# port 8080 is the cloud run port. Nginx listens on 8080. Django API and admin pages served on 8081.
+
+CMD ./opps/start_nginx.sh -D & ./opps/start_gunicorn.sh -D
+
+
+#docker build -t datafeed .
+#&& docker run
+#-p 8000:8080
+#--env EVIRONMENT=DEV
+#--env PORT=8000
+#--name datafeed1
+#datafeed

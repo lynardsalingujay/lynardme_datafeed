@@ -1,0 +1,19 @@
+steps:
+
+  # build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/datafeed', '--build-arg', 'ENVIRONMENT=STAGE', '--file', './opps/Dockerfile.prod', '.' ]
+  dir: '/workspace'
+
+  # push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'push', 'gcr.io/$PROJECT_ID/datafeed' ]
+  dir: '/workspace'
+
+  # Deploy container image to Cloud Run
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: [ 'beta', 'run', 'deploy', 'datafeed', '--image', 'gcr.io/$PROJECT_ID/datafeed', '--region', 'asia-northeast1','--platform', 'managed', '--quiet' ]
+  dir: '/workspace'
+
+images:
+- gcr.io/$PROJECT_ID/datafeed

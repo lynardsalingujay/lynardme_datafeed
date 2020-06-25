@@ -1,0 +1,18 @@
+{"model": "SimResult",
+ "meta": "",
+ "data":
+	 [{"as_of": "2020-06-16",
+	   "open_threshold_beta": 0.0002,
+       "open_threshold_alpha":  0,
+       "close_threshold_beta":  -0.0002,
+       "close_threshold_alpha":  -0.002,
+       "geo":  "US",
+       "index":  "SPX Index",
+       "volatility_index":  "VIX Index",
+       "start_date":  "2014-10-01",
+       "end_date":  "2020-03-01",
+       "fund":  null,
+       "min_holding_days":  10,
+       "dealing_cutoff_time_london":  "11:00:00",
+       "is_live":  true}]
+ }
