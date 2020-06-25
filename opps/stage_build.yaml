@@ -6,9 +6,9 @@ steps:
   dir: '/workspace'
 
   # push the container image to Container Registry
-  #- name: 'gcr.io/cloud-builders/docker'
-  #args: [ 'push', 'gcr.io/$PROJECT_ID/datafeed' ]
-  #dir: '/workspace'
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'push', 'gcr.io/$PROJECT_ID/lynardme_datafeed' ]
+  dir: '/workspace'
 
   # Deploy container image to Cloud Run
   #- name: 'gcr.io/cloud-builders/gcloud'
