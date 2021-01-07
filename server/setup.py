@@ -17,7 +17,7 @@ setup(
     install_requires = [
         "pandas==0.25.1",
         "django==2.2.6",
-        "lxml==4.4.1",
+        "lxml==4.6.2",
         "requests==2.22.0",
         "xlrd==1.2.0",
         "django-memoize==2.2.0",
